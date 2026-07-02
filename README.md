@@ -9,7 +9,7 @@ Neural Network fundamentals built from scratch using numpy and comparing it with
 
 ## Features
 
-- It covers single neutron mechanism
+- It covers single neuron mechanism
 - Sigmoid activation function
 - forward + backward propagation
 - Binary Cross Entropy Loss
