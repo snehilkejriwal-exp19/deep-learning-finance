@@ -5,6 +5,7 @@ Neural Network fundamentals built from scratch using numpy and comparing it with
 ## Notebooks
 
 ### nn_fundamentals.ipynb
+### lstm_financial_timeseries.ipynb (in progress)
 
 
 ## Features
