@@ -28,7 +28,7 @@ LSTM tested on Financial Time Series Data.
 - The numpy training loop reduced loss from ~2.35 to ~0.019 over 300 iterations
 - PyTorch rebuild converged to a closely matching loss (~0.019), confirming the manual implementation was correct.
 
-#LSTM
+# LSTM
 - The loss decreased from 0.6898 to 0.1865
 - Severe overfitting observed in training data (accuracy - 92.39%)
 - Test accuracy came out to be (49.33%)
