@@ -7,6 +7,7 @@ LSTM tested on Financial Time Series Data.
 
 ### nn_fundamentals.ipynb
 ### lstm_financial_timeseries.ipynb
+### attention_transformer.ipynb (in progress)
 
 
 ## Features
