@@ -2,7 +2,7 @@
 
 Neural Network fundamentals built from scratch using numpy and comparing it with results from PyTorch.
 LSTM tested on Financial Time Series Data.
-Transformet Architecture applied on Financial Data
+Transformer Architecture applied on Financial Data
 
 ## Notebooks
 
