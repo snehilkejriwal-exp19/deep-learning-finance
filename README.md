@@ -2,12 +2,13 @@
 
 Neural Network fundamentals built from scratch using numpy and comparing it with results from PyTorch.
 LSTM tested on Financial Time Series Data.
+Transformet Architecture applied on Financial Data
 
 ## Notebooks
 
 ### nn_fundamentals.ipynb
 ### lstm_financial_timeseries.ipynb
-### attention_transformer.ipynb (in progress)
+### attention_transformer.ipynb
 
 
 ## Features
@@ -22,6 +23,15 @@ LSTM tested on Financial Time Series Data.
 - It covers single LSTM layer (hidden_size = 64) , linear output layer, sigmoid activation funciton with Adam Optimizer
 - Data used is Nifty50 and S&P500 from 2010 to 2024
 - Number of epochs used were 100 with a batch size of 32
+
+# Transformer
+
+- Architecture: input projection (5→32), positional encoding (sine/cosine), 2-layer TransformerEncoder (4 heads), linear output, sigmoid
+- self-attention implemented from scratch in numpy, verified (softmax rows sum to 1)
+- Positional encoding before/after comparison: 47.1% → 50.6% test accuracy, loss curve consistently lower with positional encoding
+- Confusion matrix finding: model biased toward predicting "Up" (59.7% of predictions), only 52.5% accurate on those calls — suggests the model learned the      overall market trend rather than genuine day-specific signal
+- Three visualizations included: loss comparison, price/prediction overlay, confusion matrix
+  
 
 ## Key Findings
 
