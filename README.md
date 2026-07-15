@@ -9,6 +9,7 @@ Transformer Architecture applied on Financial Data
 ### nn_fundamentals.ipynb
 ### lstm_financial_timeseries.ipynb
 ### attention_transformer.ipynb
+### NLP_Finance.ipynb (in progress)
 
 
 ## Features
