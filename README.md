@@ -9,7 +9,7 @@ Transformer Architecture applied on Financial Data
 ### nn_fundamentals.ipynb
 ### lstm_financial_timeseries.ipynb
 ### attention_transformer.ipynb
-### NLP_Finance.ipynb (in progress)
+### NLP_Finance.ipynb 
 
 
 ## Features
@@ -32,6 +32,14 @@ Transformer Architecture applied on Financial Data
 - Positional encoding before/after comparison: 47.1% → 50.6% test accuracy, loss curve consistently lower with positional encoding
 - Confusion matrix finding: model biased toward predicting "Up" (59.7% of predictions), only 52.5% accurate on those calls — suggests the model learned the      overall market trend rather than genuine day-specific signal
 - Three visualizations included: loss comparison, price/prediction overlay, confusion matrix
+
+
+# NLP
+- Data pipeline: Alpha Vantage NEWS_SENTIMENT API, 5465 JPM-related articles (2018-2024), relevance-weighted sentiment scores, daily aggregation via groupby-mean, missing days filled with 0
+- Architecture: same Transformer, input_proj expanded to accept 6 features instead of 5
+- Methodology upgrade: 5 independent training runs to account for weight-initialization randomness, reporting mean ± std instead of single-run numbers
+- Result: mean test accuracy 48.94% ± 1.68% (range 46.3%-51.4%)
+- Three visualizations: model comparison bar chart with error bars, price/prediction overlay, confusion matrix
   
 
 ## Key Findings
