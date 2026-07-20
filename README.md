@@ -40,6 +40,14 @@ Transformer Architecture applied on Financial Data
 - Methodology upgrade: 5 independent training runs to account for weight-initialization randomness, reporting mean ± std instead of single-run numbers
 - Result: mean test accuracy 48.94% ± 1.68% (range 46.3%-51.4%)
 - Three visualizations: model comparison bar chart with error bars, price/prediction overlay, confusion matrix
+
+# RAG_Gen AI
+- Data source: SEC EDGAR API (no key required, 10 req/sec), Goldman Sachs (GS) 10-K filing, CIK 886982
+- Pipeline: HTML fetch → BeautifulSoup cleaning → XBRL noise removal → chunking (~500 words, 338 chunks) → embedding (all-MiniLM-L6-v2, sentence-transformers) → cosine similarity retrieval → grounded generation (Gemini 3.5 Flash)
+- Explicit grounding instruction used to prevent hallucination — model told to answer only from retrieved context, explicitly say when the answer isn't available
+- Four test cases demonstrating a range of RAG behaviors: full grounded answer (FICC revenue), correct refusal on weak retrieval (business segments), correct refusal despite reasonable similarity (total net revenue — adjacent-but-wrong figures retrieved), partial grounded answer with explicit gap-flagging (MD&A net revenues)
+- Key finding: specific/factual questions retrieve more reliably than abstract/conceptual ones; high similarity score indicates topical relevance, not guaranteed answer availability — the LLM's explicit grounding check is what ultimately prevents overconfident wrong answers, not retrieval alone
+- Known limitation: XBRL-stripping relies on finding a known header phrase, works for this filing but isn't robust to arbitrary filing formats without adjustment
   
 
 ## Key Findings
